@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Bank Connect</title>
+  <title>Pexip Bank Connect Demo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -50,19 +51,21 @@
 
     <div class="jumbotron jumbotron-fluid">
       <div class="container-sm">
-        <h1 class="display-8">Hello. Nice to meet you.</h1>
-        <p class="lead"><strong>Conveniently meet safely and securely over video with our friendly professional team to discuss all of your personal and business banking needs.</strong></p>
+        <h1 class="display-1">Hello. Nice to meet you.</h1>
         <img src="images/professionalTeam.jpeg" class="img-fluid rounded mx-auto d-block" alt="Lets Meet">
         <p>
-        <h2 class="display-8">Simply schedule a video meeting from the available options below</h2>
+        <p class="lead"><strong>Conveniently meet safely and securely over video with our friendly professional team to discuss all of your personal and business banking needs. Book a 45 min appointment from the calendar below and we will send you an
+            email/SMS with the meeting details.</strong></p>
 
         <div class="calendly-inline-widget container-fluid" data-url="https://calendly.com/pexip-anz-demo100/pexip-booking-1-1?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
 
         <hr>
         <div class="jumbotron jumbotron-fluid">
           <div class="container-fluid">
-            <h2 class="display-8">Meet Now</h2>
-            <p class="lead"><strong>Once your appointment is confirmed you will recieved a secure meeting invitation via email (and optional SMS reminder) with a personal meeting code allowing you to join your video meeting using the button below at the allocated time.  For security reasons do not share the security code.</strong></p>
+            <h3 class="display-2">Your appointment</h3>
+            <p class="lead"><strong>Once your appointment is confirmed you will recieved a secure meeting invitation via email (and optional SMS reminder) with a personal meeting code allowing you to join your video meeting using the button below at
+                the allocated time.
+                For security reasons do not share the video meeting security code.</strong></p>
 
             <div class="input-group input-group-lg col-7 mx-auto container-fluid">
               <input type="text" class="form-control" placeholder="Name (Nickname)" aria-label="Nickname" aria-describedby="button-addon2" onchange="enableMeetingButton();" id="nickname">
@@ -80,11 +83,17 @@
             </div>
             <br>
             <p class="lead">Join from desktop, browser, mobile or tablet with no software or setup required. Your banker will be alerted when you arrive in the virtual lobby for your scheduled apointment.</p>
+
+            <figcaption class="figure-caption text-end">Please note this is a demonstration platform and your Pexip representative we will share the specific meeting code with you.</figcaption>
             <hr>
 
+            <div class="container-fluid">
+              <figure class="figure">
+                <img src="images/Pexip_logo_RGB_sm.png" class="figure-img img-fluid rounded" alt="Pexip Logo">
+                <figcaption class="figure-caption text-end">Powered by Pexip video conferencing solutions.</figcaption>
+              </figure>
+            </div>
 
-            <img src="images/Pexip_logo_RGB.png" alt="" width="100" class="d-inline-block align-left">
-            <p <small>Powered by Pexip Video Conferencing Solutions.</small></p>
 
             <script>
               function enableMeetingButton() {
