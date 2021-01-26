@@ -16,7 +16,7 @@
       <nav class="navbar navbar-light">
         <div class="container-fluid">
           <a class="navbar-brand">
-            <img src="images/PexipBank.svg" alt="" width="100"  class="d-inline-block align-middle">
+            <img src="images/PexipBank.svg" alt="Pexip Bank" class="img-fluid rounded mx-auto">
 
           </a>
         </div>
@@ -29,10 +29,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Demo System <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Some broken things</a>
+            <a class="nav-link" href="#">Pexip Demo System <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact Us</a>
@@ -54,28 +51,57 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container-sm">
         <h1 class="display-8">Hello. Nice to meet you.</h1>
-        <p class="lead">Conveniently meet safely and securely over video with our friendly professional team to discuss all of your personal and business banking needs.</p>
+        <p class="lead"><strong>Conveniently meet safely and securely over video with our friendly professional team to discuss all of your personal and business banking needs.</strong></p>
         <img src="images/professionalTeam.jpeg" class="img-fluid rounded mx-auto d-block" alt="Lets Meet">
         <p>
-        <h2 class="display-8">Schedule a meeting from the available options below</h2>
+        <h2 class="display-8">Simply schedule a video meeting from the available options below</h2>
 
         <div class="calendly-inline-widget container-fluid" data-url="https://calendly.com/pexip-anz-demo100/pexip-booking-1-1?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
 
         <hr>
         <div class="jumbotron jumbotron-fluid">
-          <div class="container-sm">
+          <div class="container-fluid">
             <h2 class="display-8">Meet Now</h2>
-            <p class="lead">Once your appointment is confirmed you will recieved a secure meeting link allowing you to join your video meeting using the button below at the allocated time.</p>
+            <p class="lead"><strong>Once your appointment is confirmed you will recieved a secure meeting invitation via email (and optional SMS reminder) with a personal meeting code  allowing you to join your video meeting using the button below at the allocated time.  For security reasons do not share the security code.</strong>/p>
 
-            <div class="col-6 mx-auto container-fluid">
-              <a class="btn btn-primary btn-lg btn-block" href="https://pexip.vc/webapp/#/?conference=1210582374@pexip.vc&name=BankGuest" role="button">Start Meeting</a>
-              <br>
+            <div class="input-group input-group-lg col-7 mx-auto container-fluid">
+              <input type="text" class="form-control" placeholder="Name (Nickname)" aria-label="Nickname" aria-describedby="button-addon2" onchange="enableMeetingButton();" id="nickname">
             </div>
+            <div class="input-group input-group-lg col-7 mx-auto container-fluid">
+              <input type="text" class="form-control" placeholder="Meeting Code" aria-label="Meeting Code" aria-describedby="button-addon2" minlength="6" maxlength="15" onchange="enableMeetingButton();" id="meetingCode">
+            </div>
+            <br>
 
-            <p class="lead">Join from desktop, browser, mobile or tablet with no software to download or configure. Your banker will be instantly alerted when you arrive in the virtual lobby.</p>
+            <div class="col-7 mx-auto container-fluid">
+              <form id="launchMeeting" action="https://pexip.vc/webapp/#/?conference=1210582374@pexip.vc&name=BankGuest">
+                <button class="btn btn-primary btn-lg btn-block" role="button" disabled id="startMeetingButton">Join My Meeting</a>
+              </form>
+
+            </div>
+            <br>
+            <p class="lead">Join from desktop, browser, mobile or tablet with no software or setup required. Your banker will be alerted when you arrive in the virtual lobby for your scheduled apointment.</p>
             <hr>
 
 
             <img src="images/Pexip_logo_RGB.png" alt="" width="100" class="d-inline-block align-left">
             <p <small>Powered by Pexip Video Conferencing Solutions.</small></p>
+
+            <script>
+              function enableMeetingButton() {
+                var myNickname = document.getElementById("nickname").value;
+                var myCode = document.getElementById("meetingCode").value;
+
+                if ((myCode.length > 8) && (myNickname.length > 1)) {
+                  document.getElementById("startMeetingButton").disabled = false;
+                  var myNickname = document.getElementById("nickname").value;
+                  var myCode = document.getElementById("meetingCode").value;
+                  myCode = myCode.replace(/ /g, '')
+                  var myMeetingUrl = 'https://pexip.vc/webapp/#/?conference=' + myCode + '@pexip.vc&name=' + myNickname;
+                  document.getElementById("launchMeeting").action = myMeetingUrl
+                } else {
+                  document.getElementById("startMeetingButton").disabled = true;
+                }
+
+              }
+            </script>
 </body>
