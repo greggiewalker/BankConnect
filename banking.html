@@ -75,7 +75,7 @@
             </div>
             <br>
             <div class="input-group input-group-lg col-7 mx-auto container-fluid">
-              <input type="text" class="form-control" placeholder="Meeting Code" aria-label="Meeting Code" aria-describedby="button-addon2" minlength="6" maxlength="15" onchange="enableMeetingButton();" id="meetingCode">
+              <input type="text" class="form-control" placeholder="Meeting Code" aria-label="Meeting Code" aria-describedby="button-addon2" minlength="3" maxlength="100" onchange="enableMeetingButton();" id="meetingCode">
             </div>
             <div class="col-7 mx-auto container-fluid">
                 <figcaption class="figure-caption text-end text-center">For security and privacy reasons do not share your video meeting code.</figcaption>
@@ -109,7 +109,7 @@
                 var myNickname = document.getElementById("nickname").value;
                 var myCode = document.getElementById("meetingCode").value;
 
-                if ((myCode.length > 8) && (myNickname.length > 1)) {
+                if ((myCode.length > 3) && (myNickname.length > 1)) {
                   document.getElementById("startMeetingButton").disabled = false;
                   var myNickname = document.getElementById("nickname").value;
                   var myCode = document.getElementById("meetingCode").value;
